@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#shape {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+</style>
+</head>
+<body>
+
+<div>
+<section id="shape"></section>
+</div>
+
+<script>
+var start = new Date().getTime();
+
+document.getElementById("shape").onclick = function() {
+    this.style.display = "none";
+    
+    var end = new Date().getTime();
+    var time = (end - start)/1000;
+	
+    alert("Time taken: " +  time + " milliseconds");
+}
+</script>
+
+</body>
+</html>
