@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
+    <head>
+        <style>
 #shape {
     width: 100px;
     height: 100px;
-    background-color: green;
+    background-color: red;
 }
 </style>
-</head>
-<body>
+    </head>
+    <body>
 
-<div>
-<section id="shape"></section>
-</div>
+        <h1 id="Text3">you get it</h1>
 
-<script>
+        <div>
+            <section id="shape"></section>
+        </div>
+
+        <script>
 var start = new Date().getTime();
 
 document.getElementById("shape").onclick = function() {
@@ -24,9 +26,10 @@ document.getElementById("shape").onclick = function() {
     var end = new Date().getTime();
     var time = (end - start)/1000;
 	
-    alert("Time taken: " +  time + " milliseconds");
+
+    document.getElementById("Text3"). innerHTML="you get in "+time;
 }
 </script>
 
-</body>
+    </body>
 </html>
