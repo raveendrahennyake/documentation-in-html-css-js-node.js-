@@ -23,3 +23,17 @@ function hideAllSections() {
     section.style.display = "none";
   });
 }
+
+document.getElementById("apiButton").addEventListener("click", function() {
+  // Make an API call to your Spring Boot backend
+  fetch('https://services.apistore.dev/apistore/countries/v1')
+      .then(response => response.json())
+      .then(data => {
+          // Handle the response data
+          console.log(data);
+      })
+      .catch(error => {
+          // Handle errors
+          console.error('Error:', error);
+      });
+});
