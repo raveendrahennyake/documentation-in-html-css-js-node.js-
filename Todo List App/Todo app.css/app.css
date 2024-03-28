@@ -1,0 +1,62 @@
+* {
+    margin:0px ;
+    padding:0px ;
+    box-sizing: border-box;
+    background-color: #d1ccac;
+    
+}
+
+#wrapper {
+    width:80%;
+    margin:0 auto;
+    padding: 2em;
+    max-width:600px ;
+    input,.item{flex: 1;}
+
+}
+
+#taskform {
+    margin-bottom: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+#sub{
+    padding:0.5em ;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    
+}
+li {
+    cursor: pointer;
+    color: rgb(87, 184, 190);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(75, 167, 124);
+    margin-bottom: 0.8em;
+    padding: 0.3em;
+    border: 1px solid #f4bd09;
+    
+}
+
+li spam {
+    background-color: rgb(231, 235, 238);
+    padding: 2px;
+    color: black;
+}
+
+.Done {
+    background-color: rgb(161, 19, 154);
+    position: relative;
+    left: 36%;
+    
+}
+.Del {
+    background-color: rgb(214, 27, 158);
+
+}
+
+
