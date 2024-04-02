@@ -2,7 +2,8 @@ let text=document.getElementById("text");
 const sub = document.getElementById("sub");
 let result=document.getElementById("result");
 
-sub.addEventListener ("click",function () {
+sub.addEventListener ("click",function (e) {
+   e.preventDefault()
    const listitem=document.createElement("li");
    const additem=document.createElement("spam");
    const delectbutton=document.createElement("button");
@@ -11,7 +12,15 @@ sub.addEventListener ("click",function () {
    additem.classList.add("item");
    additem.innerText = text.value;
    delectbutton.classList.add("del");
+   delectbutton.innerText="del";
    Donebutton.classList.add("done");
+   Donebutton.innerText="done";
+
+   
+   listitem.appendChild(additem);
+   listitem.appendChild(Donebutton);
+   listitem.appendChild(delectbutton);
+   result.appendChild(listitem)
 
 
 
