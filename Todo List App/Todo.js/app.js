@@ -20,7 +20,30 @@ sub.addEventListener ("click",function (e) {
    listitem.appendChild(additem);
    listitem.appendChild(Donebutton);
    listitem.appendChild(delectbutton);
-   result.appendChild(listitem)
+   result.appendChild(listitem);
+
+   delectbutton.addEventListener("click",function (){
+      result.removeChild(listitem);
+     
+   });
+
+   
+   Donebutton.addEventListener("click",function() {
+      let span=document.getElementById(additem);
+      console.log(span);
+      
+      
+      
+     
+      
+   });
+
+  
+
+
+
+
+
 
 
 
