@@ -16,7 +16,7 @@ sub.addEventListener ("click",function (e) {
    Donebutton.classList.add("done");
    Donebutton.innerText="done";
 
-   
+   //increase steps
    listitem.appendChild(additem);
    listitem.appendChild(Donebutton);
    listitem.appendChild(delectbutton);
