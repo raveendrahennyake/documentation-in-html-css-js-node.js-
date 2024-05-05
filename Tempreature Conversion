@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style></style>
+        <link rel="stylesheet"
+            href="C:\Users\tec\Desktop\htm,css\Tempreature Conversion\Page 1\Page2.css">
+    </head>
+    <body>
+        <form>
+            <h1>TEMPERATURE CONVERSION</h1>
+            <input type="text" id="Text1"><br>
+            <input type="radio" id="radio1">
+            <label for="radio1">➡ Fahrenheit</label><br>
+            <input type="radio" id="radio2">
+            <label for="radio2">➡ Celsius</label><br>
+            <input type="submit" id="Submit2">
+            <h3 id="input4"></h3>
+            <h2 id="result"></h2>
+        </form>
+
+        <script
+            src="C:\Users\tec\Desktop\htm,css\Tempreature Conversion\Page 1\Page1.js"></script>
+    </body>
+</html>
+
+
+
+//Css document
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: aliceblue;
+}
+
+h1 {
+    color: rgb(125, 114, 170);
+    display: flex;
+    background-color: bisque;
+    padding: 15px;
+    font-size: 25px;
+    position: relative;
+    right: 8px
+    
+}
+
+form {
+    background-color: aqua;
+    max-width: 450px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding: 25px;
+    /* border: 1px solid black */
+    box-shadow: 1px 1px 1px 1px;
+
+}
+
+#Text1 {
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid gold;
+    margin-bottom: 15px;
+}
+
+
+#radio1 {
+    margin-bottom: 10px;
+}
+
+#Sumbit2 {
+    margin-top: 10px;
+}
+
+#radio3 {
+    position: relative;right: 12px;
+    background-size: 15px;
+    
+}
+
+#result {
+    background-color: beige;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width:50% ;
+    position: relative;
+    left: 65px;
+     
+}
+
+
+
+//Java Script
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const input1 = document.getElementById("Text1");
+    const radio1 = document.getElementById("radio1");
+    const radio2 = document.getElementById("radio2");
+    const submit = document.getElementById("Submit2");
+    const output = document.getElementById("result");
+    console.log(input1);
+
+    let answers;
+    let finlay;
+
+    function convert(e) {
+        e.preventDefault();
+        
+        if (radio1.checked) {
+
+            let answers=Number(input1.value);
+            let finlay=answers*9/5+32;
+           output.textContent =finlay ;
+        } else if (radio2.checked) {
+            let answers=Number(input1.value);
+            let finlay=answers-32*5/9
+          output.textContent = finlay;
+        } else {
+            output.textContent = "Select your choice";
+        }
+    }
+
+
+    submit.addEventListener("click",convert);
+
+    
+});
+
+
