@@ -1,0 +1,24 @@
+//1-callBack api/promise api
+
+//promise api
+
+import {dirname, join} from 'node:path';
+import { fileURLToPath } from 'node:url';
+// import { readFile } from 'node:fs';
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=dirname(__filename);
+
+import {readFile,writeFile,appendFile,rm} from 'node:fs/promises'
+import { error, log } from 'node:console';
+
+//Promise Api
+// readFile(join(__dirname,'note2.txt'),{
+//     encoding:'utf-8'
+// })
+// .then((data)=>log(data))
+// .catch(err=>log(err));
+
+//readfile
+readFile(join(__dirname,'note.txt'),{
+    encoding:'utf-8'
+}).then((data)=>log(data)).catch(err=>log(err));
