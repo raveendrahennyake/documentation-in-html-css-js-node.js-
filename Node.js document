@@ -5,6 +5,7 @@
 import {dirname, join} from 'node:path';
 import { fileURLToPath } from 'node:url';
 // import { readFile } from 'node:fs';
+import { readFileSync } from 'fs';//(sync API)
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=dirname(__filename);
 
@@ -22,3 +23,26 @@ import { error, log } from 'node:console';
 readFile(join(__dirname,'note.txt'),{
     encoding:'utf-8'
 }).then((data)=>log(data)).catch(err=>log(err));
+
+
+
+
+//Sync API
+
+ const data=readFileSync(join(__dirname,"note.txt"),{
+     encoding:'utf-8'
+ })
+ log(data);
+
+
+const document=readFileSync(join(__dirname,'note2.txt'),{
+     encoding:'utf-8'
+ },)
+ log(document)
+
+
+const details=readFileSync(join(__dirname,"Write.txt"),{
+    encoding:'utf-8'
+},)
+
+log(details)
