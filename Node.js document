@@ -46,3 +46,23 @@ const details=readFileSync(join(__dirname,"Write.txt"),{
 },)
 
 log(details)
+
+
+
+
+//function to call to function
+const fileread = (path,yourfunction) => {   //yourfunction is function 
+    readFile(join(__dirname, path), {
+        encoding: 'utf-8'
+    }, (err, data) => {
+        if (err) {
+            console.log(err);
+            
+        }
+        yourfunction(data)  //parameetter pass
+
+       
+    });
+};
+
+fileread('../Read2.txt',(data)=>log(data));   //use to annymouse functions 
