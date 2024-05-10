@@ -1,0 +1,29 @@
+chooes1///
+
+
+function function1 () {
+  consoele.log("Hello1");
+  
+}
+
+function function2 () {
+  console.log("Hello");
+  
+}
+
+function1(function2());  ////// 1 step
+
+//use call back function
+function function1 (callback) {
+  consoele.log("Hello1");
+  callback();
+}
+function function2 () {
+  console.log("Hello");
+}
+
+function1(function2);
+
+
+
+
