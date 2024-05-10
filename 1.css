@@ -1,0 +1,39 @@
+#boxcenter{
+    text-align: center;
+    width: 500px;
+    background-color: bisque;
+    height: auto;
+    margin-left: 10px;
+}
+
+h1 {
+    color: aqua;
+    
+}
+#lable1 {
+   
+    position: relative;
+    right: 10px;
+}
+
+#sumbit1 {
+    margin-top: 10px;
+    background-color: rgb(42, 165, 83);
+}
+
+
+#input1{
+    border: 1px solid green;
+    text-align: center;
+}
+#result {
+    font-family: fantasy;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+#image img {
+    height: 30px; /* adjust the height as needed */
+    width: 30px; /* adjust the width as needed */
+}
+
