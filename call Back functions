@@ -22,6 +22,8 @@ function function2 () {
   console.log("Hello");
 }
 
+
+
 function1(function2);
 
 /// another type of callback function use
@@ -44,6 +46,40 @@ function display (x) {
 }
 
 function4(display,8,8);
+
+
+
+//map finction and foreach loop
+
+
+map function and foreach loop main difference is map function is have return type and map function return to new array but foreach loop have npt return method 
+
+
+let arrys=[10,88,99,66,55];
+
+//forEach loops
+let conos=arrys.forEach(getname);
+
+function getname (elements) {
+    elements=elements+10;
+    console.log(elements);
+
+}
+
+console.log(conos);/// underfind
+
+//map methods
+
+let newconons=arrys.map(getname2)
+
+function getname2 (elements) {
+
+   return elements+=20;
+    // console.log(elements);
+}
+ console.log(newconons); //
+[30, 108, 119, 86, 75]
+
 
 
 
