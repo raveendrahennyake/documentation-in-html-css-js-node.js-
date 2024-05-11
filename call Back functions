@@ -82,5 +82,23 @@ function getname2 (elements) {
 
 
 
+//use Filter methods
+
+ let mydatails=[55,22,33,6644,85,47];
+ const mynewnumbers=mydatails.filter(function6);
+ function function6 (elements) {
+   let numberss=elements%2==0;
+    return numberss;
+ }
+ console.log(mynewnumbers);
+
+//2
+const mynewguess=mydatails.filter((elements)=>{
+    const output=elements%2==0;
+    return output;
+
+})
+console.log(mynewguess);
+
 
 
