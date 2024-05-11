@@ -100,5 +100,18 @@ const mynewguess=mydatails.filter((elements)=>{
 })
 console.log(mynewguess);
 
+//Foreach/map/filter/reduce methods
+
+reduce methods
+let first=[77,88,99,55,11,33];
+const datass=first.reduce((accmulater,elements)=>{
+     return accmulater+elements;
+//    return elements=elements+elements+1
+
+})
+console.log(datass);
+
+
+
 
 
