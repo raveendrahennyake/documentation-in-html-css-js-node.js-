@@ -36,6 +36,15 @@ function function5 (x) {
 }
 function4(function5,8,8);
 
+//html is(<h1 id="para"</h1>
+function display (x) {
+    const input=document.getElementById("para");
+    input.textContent=x;
+
+}
+
+function4(display,8,8);
+
 
 
 
