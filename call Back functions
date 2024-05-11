@@ -24,6 +24,18 @@ function function2 () {
 
 function1(function2);
 
+/// another type of callback function use
+
+function function4 (callback,a,b) {
+    let x=a+b
+    callback(x);
+  
+}
+function function5 (x) {
+    console.log(x)
+}
+function4(function5,8,8);
+
 
 
 
