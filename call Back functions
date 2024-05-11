@@ -111,6 +111,24 @@ const datass=first.reduce((accmulater,elements)=>{
 })
 console.log(datass);
 
+use Arrow Functions
+
+let newdata=[77,88,99,66,33,22];
+
+const Array1=newdata.map((elements)=>{
+    elements=elements*2
+    return elements;
+})
+
+console.log(Array1);
+
+const Array2=newdata.filter((elements)=>{
+      return elements%2===0;
+    
+})
+
+console.log(Array2);
+
 
 
 
