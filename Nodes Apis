@@ -1,0 +1,35 @@
+import { log } from 'node:console';
+import { appendFile, readFile, writeFile } from 'node:fs';
+import { dirname, join } from 'node:path';
+import {fileURLToPath} from 'node:url'
+
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=dirname(__filename);
+
+
+ readFile(join(__dirname,"1.txt"),{
+     encoding:'utf-8'
+ },(err,data)=>{
+     if(err){
+         log(err)
+     }
+     log(data)
+ })
+
+
+ writeFile(join(__dirname,'1.txt'),"dgjbsjdfbgjsbgjbssgbsg",(err,data)=>{
+     if(err){
+         log(err)
+    }
+     log(data)
+
+ })
+
+appendFile(join(__dirname,'1.txt'),"54552116544654",(err,data)=>{
+    if(err){
+        log(err)
+    }
+    log(data)
+
+})
+
