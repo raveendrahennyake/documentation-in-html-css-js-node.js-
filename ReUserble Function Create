@@ -22,3 +22,70 @@ const FileRead=()=>{
 };
 
 FileRead();
+
+Step 2 
+
+//Second Step 
+
+const FileRead=(path)=>{
+    readFile(join(__dirname,path),{  //we use path and now we can use any read doument add to this function
+        encoding:'utf-8'
+    },(err,data)=>{
+        if(err){
+            log(err)
+        }
+        log(data)
+
+    })
+
+};
+
+FileRead('../New2.txt');
+
+
+
+Step 3-  Crate New Function (function to function)
+
+const FileRead=(path,yourfunction)=>{   yourfunction=new Function
+    readFile(join(__dirname,path),{
+        encoding:'utf-8'
+    },(err,data)=>{
+        yourfunction(data)
+
+    })
+
+};
+
+FileRead('../New2.txt',(data)=>{
+    log(data)
+
+});
+//
+new Function use or not use
+const FileRead=(path,yourfunction=()=>{})=>{  //use anymous function 
+    readFile(join(__dirname,path),{
+        encoding:'utf-8'
+    },(err,data)=>{
+        yourfunction(data)
+
+    })
+
+};
+
+FileRead('../New2.txt',(data)=>{
+    log(data)
+});
+
+or
+
+const FileRead=(path,yourfunction=()=>{})=>{  //use anymous function 
+    readFile(join(__dirname,path),{
+        encoding:'utf-8'
+    },(err,data)=>{
+        yourfunction(data)
+
+    })
+};
+
+FileRead('../New2.txt');
+
