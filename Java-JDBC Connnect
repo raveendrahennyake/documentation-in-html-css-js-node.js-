@@ -1,0 +1,38 @@
+package org.example;
+import com.mysql.cj.Query;
+
+import java.sql.*;
+
+public class App {
+    public static void main(String[] args) {
+      String url="jdbc:mysql://localhost:3306/school";
+        String user="root";
+        String password="raveendra@2022SQL";
+       String quary="SELECT * FROM course";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection=DriverManager.getConnection(url,user,password);
+            Statement statement=connection.createStatement();
+            ResultSet resultSet=statement.executeQuery(quary);
+            String c_id;
+            String name;
+          int cost;
+
+            while (resultSet.next()){
+                c_id=resultSet.getString(1);
+               name=resultSet.getString(2);
+                cost=resultSet.getInt(3);
+     System.out.println(c_id+name+cost);
+
+            }
+            connection.close();
+        }
+        catch (Exception e){
+           System.out.println(e);
+
+       }
+
+    }
+
+}
