@@ -66,3 +66,37 @@ const fileread = (path,yourfunction) => {   //yourfunction is function
 };
 
 fileread('../Read2.txt',(data)=>log(data));   //use to annymouse functions 
+
+Inquier Library in node.js///////
+
+import { log } from 'node:console';
+import inquirer from 'inquirer';
+
+let a = true;
+
+const myfunction = async () => {
+    const data = await inquirer.prompt([{
+        type: 'password',
+        name: 'username',
+        message: 'Enter your user name list',
+        mask: '*',
+    }, {
+        type: 'confirm',
+        name: 'hasOtherValue',
+        message: 'Do you have other values?',
+    }]);
+
+    log(data);
+    if (!data.hasOtherValue) {
+        a = false;
+    }
+};
+
+const main = async () => {
+    while (a) {
+        await myfunction();
+    }
+};
+
+main();
+
