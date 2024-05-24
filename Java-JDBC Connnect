@@ -71,3 +71,160 @@ public class App {
 
     }
 
+
+
+
+
+package org.example;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public  class App {
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/hotel_management";
+        String user = "root";
+        String password = "raveendra@2022SQL";
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+        try {
+            connection= DriverManager.getConnection(url,user,password);
+            while (true){
+                System.out.println();
+                System.out.println("HOTEL MANAGEMENT SYSTEM");
+                Scanner scanner=new Scanner(System.in);
+                System.out.println("1. Reserve a room");
+                System.out.println("2. View Reservations");
+                System.out.println("3. Get Room Number");
+                System.out.println("4. Update Reservations");
+                System.out.println("5. Delete Reservations");
+                System.out.println("0. Exit");
+                System.out.print("Choose an option: ");
+                int choice = scanner.nextInt();
+
+                switch (choice){
+                    case 1:{
+                        Reserveroom reserveroom1=new Reserveroom();
+                        reserveroom1.reserveroom(connection,scanner);
+                    }
+                    case 2:{
+
+                    }
+                }
+                break;
+
+            }
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        finally {
+            try {
+                if(connection!=null){
+                    statement.close();
+                    connection.close();
+                }
+
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+package org.example;
+
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Reserveroom {
+    Connection connection=null;
+    Statement statement=null;
+    public void reserveroom (Connection connection, Scanner scanner) {
+        try {
+
+            System.out.println("Enter your name");
+            String guestName=scanner.next();
+            scanner.nextLine();
+            System.out.println("Enter your ID Number");
+            String guest_id=scanner.nextLine();
+            System.out.println("Enter your Room number");
+            int roomNumber=scanner.nextInt();
+            System.out.println("Enter your phone number");
+            int contactNumber=scanner.nextInt();
+
+            String query = "INSERT INTO reservations (id, guest_id, guest_name, room_number, contact_number) VALUES (1,'" + guest_id + "', '" + guestName + "', " + roomNumber + ", " + contactNumber + ")";
+
+            try {
+                statement=connection.createStatement();
+                int resultSet=statement.executeUpdate(query);
+
+                if(resultSet>0){
+                    System.out.println("your register is successful!");
+                }
+                else {
+                    System.out.println("Reservation failed.");
+                }
+
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        finally {
+            try {
+                if(connection!=null){
+                    statement.close();
+                    connection.close();
+                    scanner.close();
+                }
+
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
+
+
+    }
+
+
+}
+
+
+
+
+
+
