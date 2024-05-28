@@ -1,0 +1,19 @@
+Main Layer in Spring
+
+Presentation Layer – Authentication & Json Translation.
+Business Layer(Service) – Business Logic, Validation & Authorization.
+Persistence Layer – Storage Logic.
+Database Layer – Actual Database.
+
+
+Main Anotations in spring
+
+@SpringBootApplication
+@Entity-create Tablels
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Service
+@@RestController
+@Autowired=>Depenci injections
+
