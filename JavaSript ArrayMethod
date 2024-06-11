@@ -1,0 +1,99 @@
+//Encapulations
+
+class students {
+    #width=100;
+    #Height=200;
+    setHeight (width) {
+        this.#width=width;
+    }
+    setWeight (Height) {
+         this.#Height=Height;
+
+    }
+
+    getWeight () {
+        return this.#Height;
+    }
+
+    getHeight () {
+        return this.#width;
+    }
+
+}
+
+const obj1=new students;
+console.log(obj1.getHeight())
+
+
+
+
+
+//Arraw metohs
+
+const arr=[10,88,99,66,55];
+
+const mydatas2=arr.map((elements)=>{
+    return elements*2
+
+    //output[20, 176, 198, 132, 110]
+
+})
+console.log(mydatas2);
+
+//filter functions
+
+const mydatas1=arr.filter((elements)=>{
+    return elements>90
+    //output[99]
+
+})
+
+console.log(mydatas1);
+
+ //ForEach functions
+
+ const mydata3=arr.forEach((elements)=>{
+    elements*2
+    console.log(elements)
+
+    //output(10,88,66,66,55);
+ })
+
+ //reduce functions
+       
+ const numbers = [1, 2, 3, 4, 5];
+
+ // Sum up all the numbers
+ const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+ 
+ console.log(sum); // 15
+
+
+
+//Combined Example
+
+
+const products = [
+    { name: 'Laptop', price: 1000, category: 'Electronics' },
+    { name: 'Phone', price: 500, category: 'Electronics' },
+    { name: 'Shirt', price: 50, category: 'Clothing' },
+    { name: 'Shoes', price: 80, category: 'Clothing' }
+];
+
+// Filter out products that are in the 'Electronics' category
+const electronics = products.filter(product => product.category === 'Electronics');
+
+// Map the filtered products to their prices
+const prices = electronics.map(product => product.price);
+
+// Log each price
+prices.forEach(price => console.log(price));
+// Output:
+// 1000
+// 500
+
+// Sum up the prices
+const totalCost = prices.reduce((acc, price) => acc + price, 0);
+
+console.log(`Total cost of electronics: ${totalCost}`); // Total cost of electronics: 1500
+
