@@ -92,8 +92,55 @@ prices.forEach(price => console.log(price));
 // 1000
 // 500
 
+
+
+
+//reduce methods
+
+accumulator: The accumulated value previously returned in the last invocation of the callback, or the initial value if it was supplied.
+currentValue: The current element being processed in the array.
+index (optional): The index of the current element being processed in the array.
+array (optional): The array reduce was called upon.
+initialValue (optional): A value to use as the first argument to the first call of the callback.
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // 15
+
 // Sum up the prices
 const totalCost = prices.reduce((acc, price) => acc + price, 0);
 
 console.log(`Total cost of electronics: ${totalCost}`); // Total cost of electronics: 1500
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // 15
+
+
+
+const fruits = ['apple', 'banana', 'orange', 'apple', 'orange', 'banana', 'banana'];
+
+const fruitCount = fruits.reduce((accumulator, currentValue) => {
+    if (!accumulator[currentValue]) {
+        accumulator[currentValue] = 1;
+    } else {
+        accumulator[currentValue]++;
+    }
+    return accumulator;
+}, {});
+
+console.log(fruitCount);
+// Output:
+// { apple: 2, banana: 3, orange: 2 }
+
 
