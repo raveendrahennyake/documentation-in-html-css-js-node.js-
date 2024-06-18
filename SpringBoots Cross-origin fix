@@ -11,3 +11,24 @@ What is the @Autowired Annotation? @Autowired is one of the core annotations in 
 @Controller annotation
 We can annotate classic controllers with the @Controller annotation. This is simply a specialization of the @Component class, which allows us to auto-detect implementation classes through the classpath scanning. We typically use @Controller in combination with a @RequestMapping annotation for request handling methods
 
+
+
+
+//How to fix Spring Boots cross-origin in Spring Boot
+
+
+package com.example.demo.configurations;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.context.annotation.Configuration;
+@Configuration
+public class Configurations implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
+}
