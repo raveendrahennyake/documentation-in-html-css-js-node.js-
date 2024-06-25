@@ -47,6 +47,34 @@ app.get('/api/book/:Is_bn', (request, response) => {
     });
 });
 
+//post book
+app.post('/api/addbooks', (request, response) => {
+    const details = {
+        tilte: request.body.tilte,
+        description: request.body.description
+    };
+
+    const query = "INSERT INTO book SET ?";
+
+    connection.query(query, details, (err, result) => {
+        if (err) {
+            console.error("Error inserting book:", err);
+            response.status(500).send({
+                status: false,
+                message: "Book insert failed",
+                error: err.message
+            });
+        } else {
+            console.log("Book inserted successfully:", result);
+            response.send({
+                status: true,
+                message: "Book inserted correctly",
+                data: result
+            });
+        }
+    });
+});
+
 //Author part
 app.get('/api/authors',(request,response)=>{
     connection.query("SELECT * FROM author",(err,result)=>{
