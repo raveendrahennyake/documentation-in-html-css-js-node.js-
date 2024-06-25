@@ -1,0 +1,83 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
+const app = express();
+
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'shop'
+});
+
+connection.connect((err) => {
+    if (err) {
+        console.log(err,"HELLO");
+    } else {
+        console.log("Connected to the database");
+    }
+});
+
+//get api
+app.get('/api/books', (request, response) => {
+    connection.query("SELECT * FROM book", (err, result) => {
+        if (err) {
+            console.log(err);
+            response.status(500).send('An error occurred');
+        } else {
+            response.json(result);
+        }
+    });
+});
+
+app.get('/api/book/:Is_bn', (request, response) => {
+    const bookid = request.params.Is_bn;
+    const query = "SELECT * FROM book WHERE Is_bn = ?";
+
+    connection.query(query, [bookid], (err, result) => {
+        if (err) {
+            console.log(err);
+            response.status(500).send('An error occurred');
+        } else {
+            response.json(result);
+        }
+    });
+});
+
+//Author part
+app.get('/api/authors',(request,response)=>{
+    connection.query("SELECT * FROM author",(err,result)=>{
+        if(err){
+            response.status(500).send("An error occurred");
+        }
+
+        else {
+            response.json(result);
+        }
+    })
+})
+
+app.get('/api/author/:author_id',(request,response)=>{
+    const authorid=request.params.author_id;
+    const query="SELECT * FROM author WHERE author_id=?";
+    connection.query(query,[authorid],(err,result)=>{
+        if(err){
+            response.status(500).send("An error occurred")
+        }
+        else {
+            response.json(result);
+        }
+    })
+})
+
+const port = process.env.PORT || 3000;
+app.listen(port, (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(`Server is running on port ${port}`);
+    }
+});
