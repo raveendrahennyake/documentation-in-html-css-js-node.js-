@@ -109,3 +109,43 @@ app.listen(port, (err) => {
         console.log(`Server is running on port ${port}`);
     }
 });
+
+
+//put method 
+
+
+app.put('/api/updateAuthor/:author_id', (req, res) => {
+    const { author_id } = req.params;
+    const { name, description } = req.body;
+
+    const query = "UPDATE author SET name = ?, description = ? WHERE author_id = ?";
+
+    connection.query(query, [name, description, author_id], (err, result) => {
+        if (err) {
+            res.send({
+                status: false,
+                message: "Your update has failed",
+            });
+        } else {
+            res.send({
+                status: true,
+                message: "Update is successful",
+                data: result
+            });
+        }
+    });
+});
+
+
+//Author part
+app.get('/api/authors',(request,response)=>{
+    connection.query("SELECT * FROM author",(err,result)=>{
+        if(err){
+            response.status(500).send("An error occurred");
+        }
+
+        else {
+            response.json(result);
+        }
+    })
+})
