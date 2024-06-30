@@ -135,6 +135,29 @@ app.put('/api/updateAuthor/:author_id', (req, res) => {
         }
     });
 });
+app.delete('/api/delectAuthor/:author_id',(request,response)=>{
+    const author_id=request.params.author_id;
+    const query="DELETE  FROM author WHERE author_id=?"
+
+    connection.query(query,author_id,(err,result)=>{
+        if(err){
+            response.status(500).send({
+                status:false,
+                message:'Your Delect is Failed',
+            })
+        }
+        else {
+            response.send({
+                status:true,
+                message:"your Author Is Delect",
+                data:result
+
+            })
+        }
+
+    })
+
+})
 
 
 //Author part
