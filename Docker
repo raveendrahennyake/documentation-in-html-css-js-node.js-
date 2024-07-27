@@ -22,6 +22,34 @@ CMD ["npm", "start"]
 
 
 
+//React Design 
+
+
+# Base Image
+FROM node:20-alpine
+
+#WorkDiR
+WORKDIR /app
+
+#Package add to the code
+
+COPY ../package*.json .
+
+## Install package
+RUN npm install
+
+## copy application file
+COPY .. .
+
+## Expose your applications  port 
+EXPOSE 3000
+
+## run appplications
+RUN ["npm" , "start"]
+
+
+
+
 
 //Create Containar 
 
