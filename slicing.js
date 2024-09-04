@@ -22,6 +22,14 @@ const originalArray = [7, 8, 9];
 const clonedArray = [...originalArray];
 console.log(clonedArray); // Output: [7, 8, 9]
 
+//Use Immar library
+
+const NewTown=produce(Details,(copy)=>{
+  copy.document.town="Nuwara";
+})
+
+console.log(NewTown);
+
 
 Spreading in Arrays
 
