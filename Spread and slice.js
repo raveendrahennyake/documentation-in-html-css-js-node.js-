@@ -1,2 +1,2 @@
-![My Image](assets/images/javascript.jpg)
+![My Image](javascript.png)
 
