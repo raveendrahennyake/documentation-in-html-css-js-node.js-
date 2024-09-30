@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "tsc-init": "^2.1.0",
+    "typescript": "^5.5.4",
+    "start":"ts-node index.ts"
+  }
+}
