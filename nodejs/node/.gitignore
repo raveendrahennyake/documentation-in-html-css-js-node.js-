@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/NewDocument/httpmodule/node_modules
 /.pnp
 .pnp.js
 
