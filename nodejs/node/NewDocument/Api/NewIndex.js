@@ -10,8 +10,8 @@ const __filename=fileURLToPath(import.meta.url);
 const __dirname=dirname(__filename);
 
 
-// readfile('documents.txt',(data)=>{console.log(data)});
-// WriteFile('write2.txt',"my new Project is node projects",(err)=>{console.log(err)});
+ readfile('documents.txt',(data)=>{console.log(data)});
+ WriteFile('write2.txt',"my new Project is node projects",(err)=>{console.log(err)});
 
 // AppendFile('write.txt');
 
