@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon NewDocument/FileUpload/app.js"
+    "start": "nodemon NewDocument/FileUpload/app.js",
+    "dev":"nodemon NewDocument/NewServerBuild/index.js"
+    
     
   },
   "author": "",

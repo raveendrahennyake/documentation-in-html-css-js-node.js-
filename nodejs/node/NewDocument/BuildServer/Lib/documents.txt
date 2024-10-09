@@ -1,0 +1,1 @@
+write name is srilanka deen and age 555 write.txt;
